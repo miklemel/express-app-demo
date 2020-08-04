@@ -123,6 +123,33 @@ app.get("/forms/kdd_list", jsonParser, function (request, response) {
             },
         ]});
 });
+app.get("/forms/get_messages", jsonParser, function (request, response) {
+    // если не переданы данные, возвращаем ошибку
+    if(!request.body) return response.sendStatus(400);
+    console.log('get messages ')
+    response.json({"message": "good"});
+});
+
+app.get("/forms/extend_keepeng", jsonParser, function (request, response) {
+    // если не переданы данные, возвращаем ошибку
+    if(!request.body) return response.sendStatus(400);
+    let uuid = request.query.uuid;
+    console.log('uid:', uuid)
+    console.log('get extend keeping ')
+    response.json({"message": `extension for ${uuid} was successfull`, "status": "success"});
+    // response.json({"message": `extension for ${uuid} was interrupted, u have no more right for it`, "status": "fail"});
+});
+
+app.get("/forms/get_message", jsonParser, function (request, response) {
+    // если не переданы данные, возвращаем ошибку
+    if(!request.body) return response.sendStatus(400);
+    let uid = request.query.uid;
+    console.log('uid:', uid)
+    console.log('get message after download ')
+    response.json({"message": `download for ${uid} was successfull`, "status": "success"});
+    // response.json({"message": `download for ${uid} was interrupted`, "status": "fail"});
+});
+
 app.get("/forms/user_description", jsonParser, function (request, response) {
     // если не переданы данные, возвращаем ошибку
     if(!request.body) return response.sendStatus(400);
@@ -219,6 +246,7 @@ app.get("/forms/tasks", jsonParser, function (request, response) {
                     "requestDate": 1596367870000,
                     "before_deleting_time": 3600,
                     "download_times": 0,
+                    "product_keeping_time": 1298,
                     "progress": {
                         percent: 1,
                         size: 1,
@@ -227,7 +255,7 @@ app.get("/forms/tasks", jsonParser, function (request, response) {
                 },
                 {
                     "uid": "5",
-                    "name": "1",
+                    "name": "5",
                     "datetimeStart": 1596337870000,
                     "datetimeEnd": 1596367870000,
                     "cam_id": 1,
@@ -235,6 +263,7 @@ app.get("/forms/tasks", jsonParser, function (request, response) {
                     "requestDate": 1596367870000,
                     "before_deleting_time": 431999,
                     "download_times": 2,
+                    "product_keeping_time": 1290,
                     "progress": {
                         percent: 1,
                         size: 1,
@@ -243,14 +272,15 @@ app.get("/forms/tasks", jsonParser, function (request, response) {
                 },
                 {
                     "uid": "5",
-                    "name": "1",
+                    "name": "6",
                     "datetimeStart": 1596337870000,
                     "datetimeEnd": 1596367870000,
-                    "cam_id": 1,
+                    "cam_id": 44,
                     "status": "success",
                     "requestDate": 1596367870000,
                     "before_deleting_time": 23332,
                     "download_times": 1,
+                    "product_keeping_time": 1298,
                     "progress": {
                         percent: 1,
                         size: 1,
