@@ -280,7 +280,7 @@ app.get("/forms/tasks", jsonParser, function (request, response) {
                     "requestDate": 1596367870000,
                     "before_deleting_time": 23332,
                     "download_times": 1,
-                    "product_keeping_time": 1298,
+                    "product_keeping_time": 1296000,
                     "progress": {
                         percent: 1,
                         size: 1,
@@ -297,6 +297,7 @@ app.get("/forms/tasks", jsonParser, function (request, response) {
                     "requestDate": 1596367870000,
                     "before_deleting_time": 23332,
                     "download_times": 2,
+                    "product_keeping_time": 1296000,
                     "progress": {
                         percent: 1,
                         size: 1,
